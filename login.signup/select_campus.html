@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Batangas State University | LAMB Campuses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="select_campus.css">
+</head>
+
+<body>
+  <!-- Image Slider Background -->
+  <div class="image-slider">
+    <img src="login.signup/Balayan_campus.jpg" alt="Balayan Campus" class="active">
+    <img src="login.signup/Lobo_campus.jpg" alt="Lobo Campus">
+    <img src="login.signup/Alangilan_campus.jpg" alt="Alangilan Campus">
+    <img src="login.signup/Mabini_campus.jpg" alt="Mabini Campus">
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="BSU">
+      <img src="login.signup/v1_101.png" alt="Logo">
+      <div class="text2">
+        <h2>BatStateU</h2>
+        <h3>LAMB Campuses</h3>
+      </div>
+    </div>
+
+    <nav class="navigation">
+      <a href="#home-section">Home</a>
+      <a href="#about-section">About</a>
+      <a href="#contact-section">Contact</a>
+      <a href="#" id="adminLoginLink">Admin</a>
+    </nav>
+  </header>
+
+  <!-- Landing Section -->
+  <section id="home-section" class="landing">
+    <div class="welcome-wrapper"> <!-- wrapper for transparent background -->
+      <div class="welcome-box">
+        <h1>Welcome to Batangas State University</h1>
+        <p>The Philippines' National Engineering University</p>
+      </div>
+    </div>
+
+   <!-- Select Your Campus Button Below the Wrapper -->
+  <button id="select-campus-btn" class="select-campus-btn">Select Your Campus</button>
+</section>
+
+  <!-- About Section -->
+  <section id="about-section" class="about">
+    <img src="login.signup/v1_101.png" alt="Logo" class="logo-image">
+    <h2>About Batangas State University</h2>
+    <p>Batangas State University (BatStateU) is a top Philippine higher learning institution known for its excellence in education, research, and community service. It offers programs in engineering, architecture, business, agriculture, environmental science, information technology, and education. The university has multiple campuses, including Lobo, Alangilan, Mabini, and Balayan, each with specialized programs. BatStateU's mission is to advance communities, industries, and the nation through education and innovation.</p>
+
+    <img src="login.signup/Lobo_campus.jpg" alt="Lobo Campus" class="campus-image">
+    <h3> LOBO CAMPUS </h3>
+    <p>BatStateU Lobo, located in Brgy. Masaguitsuit, is the only College of Agriculture and Forestry in Batangas province and one of the few in CALABARZON. With white sand beaches, protected mangrove forests, fish sanctuaries, and marine protected areas, Lobo's main industries include agriculture and food production. Its seas are part of the Verde Island Passage, known for its marine shorefish biodiversity. </p>
+  
+    <img src="login.signup/Alangilan_campus.jpg" alt="Lobo Campus" class="campus-image">
+    <h4> ALANGILAN CAMPUS</h4>
+    <p>Alangilan, the second oldest campus of the university, was acquired in 1984 and is located in Golden Country Homes, Batangas City. It covers 5.62 hectares, with three colleges and research hubs occupying 2.89 hectares. Recently, 2.73 hectares were acquired for the Knowledge, Innovation, and Science Technology (KIST) Park.</p>
+
+    <img src="login.signup/Mabini_campus.jpg" alt="Lobo Campus" class="campus-image">
+    <h5> MABINI CAMPUS </h5>
+    <p>BatStateU Mabini, the newest campus, opened in 2018 with the support of the local government and the Yu family. The campus, located on a four-hectare property, features a three-storey Josefina L. Yu Hall as its first academic infrastructure. Mabini's thriving economy and diving destinations make it a hub for business. </p>
+
+    <img src="login.signup/Balayan_campus.jpg" alt="Lobo Campus" class="campus-image">
+    <h6> BALAYAN CAMPUS </h6>
+    <p> Batangas State University Balayan, established in 1994, is a community-oriented institution in Brgy. Caloocan, Balayan, offering technology and technical-vocational education programs to the youth of the community, a first-class municipality with numerous industries and small and medium-scale enterprises.</p>
+
+</section>
+
+  <!-- Contact Section -->
+  <section id="contact-section" class="contact">
+    <h2>Contact Us</h2>
+    <p>For inquiries, contact us at 
+    </p>
+
+    <p>
+        <a href="mailto:21-04655@batstateu.edu.ph">21-04655@batstateu.edu.ph</a>
+    </p>
+
+    <p>
+        <a href="mailto:21-02870@batstateu.edu.ph">21-02870@batstateu.edu.ph</a>
+    <p>
+        <a href="mailto:21-08788@batstateu.edu.ph">21-08788@batstateu.edu.ph</a>
+    </p>
+  </section>
+
+  <!-- Campus Modal -->
+  <div id="campus-modal" class="modal">
+    <div class="modal-content">
+      <h2>Select Your Campus</h2>
+      <div class="campus-options">
+        <div class="campus" data-campus="Lobo">
+          <img src="login.signup/Lobo_campus.jpg" alt="Lobo Campus">
+          <h3>Lobo</h3>
+          <p>Marine research and coastal programs</p>
+        </div>
+        <div class="campus" data-campus="Alangilan">
+          <img src="login.signup/Alangilan_campus.jpg" alt="Alangilan Campus">
+          <h3>Alangilan</h3>
+          <p>Engineering and Architecture hub</p>
+        </div>
+        <div class="campus" data-campus="Mabini">
+          <img src="login.signup/Mabini_campus.jpg" alt="Mabini Campus">
+          <h3>Mabini</h3>
+          <p>Fisheries, tech, and environmental sciences</p>
+        </div>
+        <div class="campus" data-campus="Balayan">
+          <img src="login.signup/Balayan_campus.jpg" alt="Balayan Campus">
+          <h3>Balayan</h3>
+          <p>Information Technology, Education, and Business</p>
+        </div>
+      </div>
+
+      <button id="cancel-btn">Cancel</button>
+      <button id="proceed-btn" disabled>Proceed to Login</button>
+    </div>
+  </div>
+
+  <!-- Login/Register Popup -->
+  <div class="wrapper" id="wrapper">
+    <span class="icon-close" id="closePopup">&times;</span>
+
+    <!-- Login Form -->
+    <div class="form-box login" id="loginForm">
+      <h2>Login</h2>
+      <form id="loginActualForm" action="#">
+        <div class="input-box">
+          <input type="email" required placeholder=" ">
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required placeholder=" " id="loginPassword">
+          <label>Password</label>
+          <span class="toggle-password" toggle="#loginPassword">
+            <i class="fas fa-eye"></i> <!-- Eye Icon -->
+          </span>
+        </div>
+        <div class="extra-options">
+          <label><input type="checkbox"> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="login-register" id="signupPrompt">
+          <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+        </div>
+      </form>
+    </div>
+
+    <!-- Register Form -->
+    <div class="form-box register" id="registerForm" style="display: none;">
+      <h2>Register</h2>
+      <form id="registerActualForm" action="#">
+        <div class="input-box">
+          <input type="text" required placeholder=" ">
+          <label>Username</label>
+        </div>
+        <div class="input-box">
+          <input type="email" required placeholder=" ">
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required placeholder=" " id="registerPassword">
+          <label>Password</label>
+          <span class="toggle-password" toggle="#registerPassword">
+            <i class="fas fa-eye"></i> <!-- Eye Icon -->
+          </span>
+        </div>
+        <button type="submit" class="btn">Register</button>
+        <div class="login-register">
+          <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="select_campus.js"></script>
+</body>
+</html>
