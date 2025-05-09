@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About BatStateU</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="about.css"/>
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <div class="logo-wrapper" id="logoTrigger">
+        <div class="logo">
+          <img src="login.signup/v1_101.png" alt="BatState-U Logo" class="logo-img" />
+          <div class="logo-text">
+            <h2>BatStateU</h2>
+            <h3>LAMB Campuses</h3>
+          </div>
+        </div>
+
+        <!-- HOVER CAMPUS GRID -->
+        <div class="campus-grid">
+          <!-- LOBO -->
+          <div class="campus-card" style="background-image: url('login.signup/Lobo_campus.jpg')">
+            <div class="campus-overlay">
+              <div class="campus-name">LOBO CAMPUS</div>
+            </div>
+            <div class="campus-info">
+              <div class="campus-description">
+                Nestled in the scenic town of Lobo, this campus offers specialized programs in marine biology and environmental sciences.
+              </div>
+              <button class="select-campus">SELECT CAMPUS</button>
+            </div>
+          </div>
+
+          <!-- ALANGILAN -->
+          <div class="campus-card" style="background-image: url('login.signup/Alangilan_campus.jpg')">
+            <div class="campus-overlay">
+              <div class="campus-name">ALANGILAN CAMPUS</div>
+            </div>
+            <div class="campus-info">
+              <div class="campus-description">
+                Home to engineering and architecture programs, Alangilan Campus leads in research and innovation in Batangas.
+              </div>
+              <button class="select-campus">SELECT CAMPUS</button>
+            </div>
+          </div>
+
+          <!-- MABINI -->
+          <div class="campus-card" style="background-image: url('login.signup/Mabini_campus.jpg')">
+            <div class="campus-overlay">
+              <div class="campus-name">MABINI CAMPUS</div>
+            </div>
+            <div class="campus-info">
+              <div class="campus-description">
+                Located in the coastal town of Mabini, the campus offers programs in fisheries and aquatic sciences.
+              </div>
+              <button class="select-campus">SELECT CAMPUS</button>
+            </div>
+          </div>
+
+          <!-- BALAYAN -->
+          <div class="campus-card" style="background-image: url('login.signup/Balayan_campus.jpg')">
+            <div class="campus-overlay">
+              <div class="campus-name">BALAYAN CAMPUS</div>
+            </div>
+            <div class="campus-info">
+              <div class="campus-description">
+                Situated in the heritage town of Balayan, it focuses on teacher education and community development.
+              </div>
+              <button class="select-campus">SELECT CAMPUS</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-menu">
+        <div class="nav-item"><a href="land.html">Home</a></div>
+        <div class="nav-item"><a href="about.html">About</a></div>
+        <div class="nav-item"><a href="contact.html">Contact</a></div>
+        <div class="nav-item" id="adminBtn">Admin</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">About</h1>
+      <h2 class="sub-title">Batangas State University</h2>
+      <p class="hero-description">
+        Batangas State University (BatStateU) is a leading institution of higher learning in the Philippines, committed to providing quality education and fostering research and innovation. With a diverse range of academic programs across its campuses, BatStateU is dedicated to producing graduates who are equipped to meet the demands of a rapidly evolving global landscape.
+        <br><br>
+        <strong>University Mission</strong> 
+        <br>A university committed to producing leaders by providing a 21st century learning environment through innovations in education, multidisciplinary research, and community and industry partnerships in order to nurture the spirit of nationhood, propel the national economy, and engage the world for sustainable development.
+        <br><br>
+        <strong>University Vision</strong> 
+        <br>A premier national university that develops leaders in the global knowledge economy. 
+        <br><br>
+        <strong>Core Values</strong> 
+        <br>Patriotism
+        <br>Service
+        <br>Integrity
+        <br>Resilience
+        <br>Excellence
+        <br>Faith
+        <br><br>
+        Join us in our pursuit of innovation, sustainable development, and social impact. At BatStateU, we inspire the next generation of leaders to shape a brighter future.
+      </p>
+    </div>
+
+<!-- Admin Login Modal -->
+<div id="adminModal" class="modal">
+  <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>Admin Login</h2>
+      <form class="login-form">
+          <div class="input-group">
+              <label for="username">Username</label>
+              <input type="email" id="username" name="username" placeholder="Enter your username" required />
+          </div>
+          <div class="input-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="Enter your password" required />
+          </div>
+          <div class="form-actions">
+            <label class="remember-label">
+                <input type="checkbox"/> Remember me
+            </label>
+            <a href="#">Forgot password?</a>
+        </div> 
+
+          <button type="submit" class="login-btn">Login</button>
+      </form>
+  </div>
+</div>
+
+    <img src="login.signup/spartan.png" alt="University Campus 3D Model" class="university-model"/>
+  </section>
+
+  <script src="about.js"></script>
+</body>
+</html>

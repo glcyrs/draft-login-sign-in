@@ -1,0 +1,336 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+    overflow: hidden; /* Disable scrolling */
+    height: 100vh;
+  }
+  
+  /* Header Container */
+  header {
+    background: linear-gradient(to bottom, #c8102e, #a00d24); /* Deep red gradient */
+    padding: 0.5rem 0;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.296); /* Subtle shadow for depth */
+}
+  
+ .container.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem; /* Add left and right spacing */
+  max-width: 1400px;
+  margin: 0 auto;     /* Center the container */
+  width: 100%;
+}
+  
+  /* Logo */
+  .logo-wrapper {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img {
+    width: 80px;
+    height: auto;
+    margin-right: 12px;
+  }
+  
+  .logo-text h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .logo-text h3 {
+    font-size: 1.5rem;
+    color: #f5f5f5;
+  }
+  
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .nav-item a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffcc00;
+  }
+  
+  /* Login Button Style */
+  #loginBtn {
+    background-color: #ffffff;
+    color: #b80000;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  }
+  
+  #loginBtn:hover {
+    background-color: #ffcc00;
+    color: #b80000;
+    transform: scale(1.05);
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+.slide img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center center; /* Ensures the background image is centered */
+    filter: brightness(0.6);
+}
+
+.hero-content {
+    text-align: center;
+    color: #fff;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 90%; 
+    z-index: 1;
+    margin-bottom: 150px;
+    background-color: rgba(60, 59, 59, 0.5);
+    border-radius: 10px;
+    padding: 2rem;
+  }
+
+ .hero-title {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
+  line-height: 1.2;
+}
+
+.sub-title {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  color: #f3df09;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
+  line-height: 1.2;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  max-width: 800px; /* Increased width for readability */
+  color: #f0f0f0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.university-model {
+  position: absolute;
+  bottom: 11rem;
+  right: 2rem;
+  width: 170px;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .sub-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.65);
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    padding: 1rem;
+  }
+  
+  .auth-box {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    position: relative;
+    animation: fadeIn 0.4s ease;
+  }
+  
+  .auth-form input {
+    padding: 0.6rem 0.8rem;         /* Smaller padding */
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .auth-form h2 {
+    margin-bottom: 1.5rem;
+    color: #b80000;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  .auth-form input:focus {
+    border-color: #b80000;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(184, 0, 0, 0.15);
+  }
+  
+  .auth-form button {
+    background-color: #b80000;
+    color: #fff;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;                    /* Expanded width */
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  .auth-form button:hover {
+    background-color: #9c0000;
+    transform: translateY(-1px);
+  }
+  
+  .form-options {
+    display: flex;
+  justify-content: space-between;
+  align-items: center;           /* Aligns checkbox properly */
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #444;
+  }
+  
+  .form-options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+  
+  .form-options a {
+    color: #b80000;
+    text-decoration: none;
+  }
+  
+  .form-options a:hover {
+    text-decoration: underline;
+  }
+  
+  .switch-form {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+  
+  .switch-form a {
+    color: #b80000;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .switch-form a:hover {
+    text-decoration: underline;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .exit-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #b80000;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  .exit-btn:hover {
+    color: #9c0000;
+  }

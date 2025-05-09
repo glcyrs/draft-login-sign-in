@@ -1,0 +1,458 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    background-color: #fff;
+}
+  
+/* Navbar/Header */
+header {
+    background: linear-gradient(to bottom, #c8102e, #a00d24); /* Deep red gradient */
+    padding: 1.2rem 0;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.296); /* Subtle shadow for depth */
+}
+  
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 0 2rem; /* Adjust as needed */
+    box-sizing: border-box;
+}
+  
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+  
+.logo {
+    display: flex;
+    align-items: center;
+}
+  
+.logo-img {
+    height: 50px;
+    margin-right: 12px;
+}
+  
+.logo-text h2 {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 800;
+    margin-bottom: 4px;
+    text-shadow: #333;
+    text-align: left;
+}
+  
+.logo-text h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #f1f1f1;
+    text-shadow: #333;
+}
+  
+/* Campus grid (on logo hover) */
+.campus-grid {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 600px;
+    padding: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.15); /* semi-transparent white */
+    backdrop-filter: blur(8px); /* frosted glass effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    z-index: 1000;
+}
+
+/* Show grid on logo hover */
+.logo-wrapper:hover .campus-grid,
+.campus-grid.active {
+    display: grid;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Each campus card has individual white background */
+.campus-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+}
+
+.campus-card {
+    position: relative;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.campus-card:hover {
+    transform: scale(1.02);
+}
+
+.campus-card:hover .campus-overlay {
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.6); /* More intense dark overlay */
+}
+
+.campus-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.campus-info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding: 1.3rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    font-size: 0.85rem; /* Adjusted font size */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+    gap: 1rem;
+    z-index: 2;
+}
+
+.campus-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+  
+.campus-card:hover .campus-info {
+    transform: translateY(0);
+}
+
+.campus-description {
+    font-size: 0.85rem; /* Adjusted text size for readability */
+    line-height: 1.5; /* Added spacing between lines */
+    color: #555; /* Slightly lighter color for text */
+    font-weight: 400;
+    text-align: left; /* Align text to the left for better structure */
+    padding: 0 0.5rem; /* Add padding for breathing space */
+    margin: 0; /* Remove any extra margin */
+    transition: all 0.3s ease;
+    flex-grow: 1; /* Allow description to fill the available space */
+}
+
+.select-campus {
+    padding: 0.75rem 1.5rem;
+    background: #c8102e;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    align-self: center; /* Align button at the left */
+}
+
+.select-campus:hover {
+    background: #a00d24;
+    transform: scale(1.05);
+}
+  
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    gap: 30px; /* spacing between items */
+    align-items: center;
+    justify-content: flex-end;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+  
+/* Navigation Items */
+.nav-item {
+    position: relative;
+    font-size: 16px;
+    font-weight: 1000;
+}
+  
+/* Link Styling */
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+  
+/* Hover Effect */
+.nav-item a:hover {
+    color: #ffcc00; /* or your preferred hover color */
+}
+
+#adminBtn {
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+  
+#adminBtn:hover {
+    color: #ffcc00;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding-left: 6rem;
+    background: rgba(214, 207, 207, 0.622);
+}
+
+.hero-content {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%); /* Centers the content vertically */
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    max-width: 100%;
+}
+  
+.background-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    animation: slide 150s infinite linear;
+    z-index: 0;
+    filter: brightness(0.8);
+}
+  
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+  
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+/* Text content in hero */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensure it appears above the background */
+    max-width: 100%;
+    color: #fff;
+    text-shadow: 3px 2px 6px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh; /* Vertically center the content */
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.6);
+    line-height: 1.1;
+    letter-spacing: 1px;
+   
+}
+
+.sub-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.6);
+    line-height: 1.1;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: #ffd700;
+    text-align: left;
+}
+
+.hero-description {
+    font-size: 1.5rem;
+    font-weight: 350;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+}
+  
+/* Spartan image fixed */
+.university-model {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 250px;
+    height: auto;
+    background: none;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4));
+}
+.university-model:hover {
+    transform: scale(1.1);
+}
+
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(4px); /* Optional: adds blur effect to the background */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Header */
+h2 {
+    text-align: center;
+    color: #c8102e; /* Batangas State University primary color */
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+/* Form Styles */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #c8102e; /* Focus color on input fields */
+}
+
+/* Form Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.form-options label {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.form-options a {
+    text-decoration: none;
+    color: #c8102e;
+}
+
+.form-options a:hover {
+    text-decoration: underline;
+}
+
+/* Submit Button */
+.login-btn {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    background-color: #c8102e;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #a00d24;
+}
+
+  
+/* Background slider keyframes */
+  @keyframes slide {
+    0%   { transform: translateX(0); }
+    25%  { transform: translateX(-100%); }
+    50%  { transform: translateX(-200%); }
+    75%  { transform: translateX(-300%); }
+    100% { transform: translateX(-400%); }
+}
+
+html {
+    scroll-behavior: smooth; /* Adds smooth scrolling to anchor links */
+}
+  

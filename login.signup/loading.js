@@ -1,20 +1,40 @@
-const text = "Lobo.Alangilan.Mabini.Balayan";
-const speed = 150; // typing speed in ms
+const text = "LAMB CAMPUSES";
+const speed = 300;
 let index = 0;
 
 function typeWriter() {
-    if (index < text.length) {
-        document.getElementById("loading-text").innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, speed);
-    }
+  const textElement = document.getElementById("loading-text");
+
+  if (index < text.length) {
+    textElement.innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, speed);
+  } else {
+    animateLogo();
+  }
 }
 
-window.onload = function() {
-    typeWriter();
+function animateLogo() {
+  const logo = document.getElementById("logo");
+  const text = document.getElementById("loading-text");
 
-    // After typing + some wait, redirect
-    setTimeout(function() {
-        window.location.href = "select_campus.html";
-    }, 8000); // s for safer timing
+  // Stop bounce animation
+  logo.style.animation = 'none';
+
+  // Hide text
+  text.style.opacity = 0;
+
+  // Expand and fade logo
+  setTimeout(() => {
+    logo.classList.add("expand-fade");
+  }, 100);
+
+  // Redirect after animation
+  setTimeout(() => {
+    window.location.href = "land.html";
+  }, 2200);
+}
+
+window.onload = () => {
+  typeWriter();
 };

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mabini Campus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="mb.css"/>
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <div class="logo-wrapper" id="logoTrigger">
+        <div class="logo">
+          <img src="login.signup/v1_101.png" alt="BatState-U Logo" class="logo-img" />
+          <div class="logo-text">
+            <h2>BatStateU</h2>
+            <h3>Mabini Campus</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-menu">
+        <div class="nav-item"><a href="land.html">Home</a></div>
+        <div class="nav-item" id="loginBtn">Login</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="background">
+      <div class="slide">
+        <img src="login.signup/Mabini_campus.jpg" alt="Mabini Campus"/>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">Batangas State University</h1>
+      <h2 class="sub-title">Mabini Campus</h2>
+      <p class="hero-description">
+        Batangas State University's Mabini Campus offers higher education opportunities in Mabini, Batangas, focusing on technology and engineering. The campus offers programs under the College of Informatics and Computing Sciences, including General Engineering, aiming to produce globally competitive professionals. The Mabini Supreme Student Council supports student engagement and growth.
+      </p>
+    </div>
+
+    <img src="login.signup/spartan.png" alt="University Campus 3D Model" class="university-model"/>
+  </section>
+
+<!-- Auth Modal -->
+<div class="auth-container" id="authModal">
+  <div class="auth-box">
+    <button class="exit-btn" onclick="closeAuthForm()">×</button>
+
+    <!-- Login Form -->
+    <form class="auth-form" id="loginForm">
+      <h2>Mabini Login</h2>
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <div class="form-options">
+        <label><input type="checkbox" /> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit">Login</button>
+      <div class="switch-form">
+        Don't have an account? <a href="#" id="showSignup">Register</a>
+      </div>
+    </form>
+
+<!-- Signup Form -->
+<form id="signupForm" class="auth-form hidden">
+  <h2>Mabini Sign Up</h2>
+  
+  <input type="text" id="signupUsername" placeholder="Username" required />
+  <input type="email" id="signupEmail" placeholder="Email" required />
+  <input type="password" id="signupPassword" placeholder="Password" required />
+  
+  <!-- Confirm Password Field -->
+  <input type="password" id="signupConfirmPassword" placeholder="Confirm Password" required />
+  
+  <button type="submit">Sign Up</button>
+
+  <!-- Switch to Login Link -->
+  <div class="switch-form">
+    Already have an account? <a href="#" id="showLogin">Login</a>
+  </div>
+</form>
+
+  <script src="mb.js"></script>
+</body>
+</html>

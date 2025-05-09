@@ -1,0 +1,386 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    padding: 0;  /* Remove body padding */
+    margin: 0;   /* Remove body margin */
+}
+
+/* Navbar/Header */
+header {
+    background: linear-gradient(to bottom, #c8102e, #a00d24); /* Deep red gradient */
+    padding: 1.2rem 0;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.296); /* Subtle shadow for depth */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 0 2rem; /* Adjust as needed */
+    box-sizing: border-box;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px;
+    margin-right: 12px;
+}
+
+.logo-text h2 {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 800;
+    margin-bottom: 4px;
+    text-shadow: #333;
+}
+
+.logo-text h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #f1f1f1;
+    text-shadow: #333;
+}
+
+/* Campus grid (on logo hover) */
+.campus-grid {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 600px;
+    padding: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.15); /* semi-transparent white */
+    backdrop-filter: blur(8px); /* frosted glass effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    z-index: 1000;
+}
+
+/* Show grid on logo hover */
+.logo-wrapper:hover .campus-grid,
+.campus-grid.active {
+    display: grid;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Campus card layout */
+.campus-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+}
+
+.campus-card {
+    position: relative;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.campus-card:hover {
+    transform: scale(1.02);
+}
+
+.campus-card:hover .campus-overlay {
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.6); /* More intense dark overlay */
+}
+
+.campus-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.campus-info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding: 1.3rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    font-size: 0.85rem;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+    gap: 1rem;
+    z-index: 2;
+}
+
+.campus-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.campus-card:hover .campus-info {
+    transform: translateY(0);
+}
+
+.campus-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #555;
+    font-weight: 400;
+    text-align: left;
+    padding: 0 0.5rem;
+    margin: 0;
+    transition: all 0.3s ease;
+    flex-grow: 1;
+}
+
+/* Button style */
+.select-campus {
+    padding: 0.75rem 1.5rem;
+    background: #c8102e;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    align-self: center;
+}
+
+.select-campus:hover {
+    background: #a00d24;
+    transform: scale(1.05);
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    gap: 30px; /* spacing between items */
+    align-items: center;
+    justify-content: flex-end;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+  
+/* Navigation Items */
+.nav-item {
+    position: relative;
+    font-size: 16px;
+    font-weight: 1000;
+}
+  
+/* Link Styling */
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+  
+/* Hover Effect */
+.nav-item a:hover {
+    color: #ffcc00; /* or your preferred hover color */
+}
+
+#adminBtn {
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+  
+#adminBtn:hover {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: linear-gradient(to bottom right, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    color: #a70000;
+    max-width: 80%;
+    z-index: 2;
+    padding: 1rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.4);
+    line-height: 1.1;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.sub-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: #a70000;
+}
+
+.hero-description {
+    font-size: 1.5rem;
+    font-weight: 350;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+/* Spartan image fixed */
+.university-model {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 250px;
+    height: auto;
+    background: none;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4));
+}
+
+.university-model:hover {
+    transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal-content h2 {
+    color: #a00d24;
+    justify-content: center;
+}
+
+.close-btn {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Form Styles */
+.login-form .input-group {
+    margin-bottom: 1rem;
+}
+
+.login-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.remember-label {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    gap: 0.5rem;
+}
+
+
+.login-btn {
+    width: 100%;
+    background-color: #c8102e;
+    color: #fff;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #a00d24;
+}
