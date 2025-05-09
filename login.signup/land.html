@@ -110,17 +110,26 @@
 <!-- Admin Login Modal -->
 <div id="adminModal" class="modal">
   <div class="modal-content">
-    <span class="close-btn">&times;</span> <!-- Close button -->
-    <form class="auth-form" id="loginForm">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
       <h2>Admin Login</h2>
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <div class="form-options">
-        <label><input type="checkbox" /> Remember me</label>
-        <a href="#">Forgot password?</a>
-      </div>
-      <button type="submit" class="login-btn">Login</button>
-    </form>
+      <form class="login-form">
+          <div class="input-group">
+              <label for="username">Username</label>
+              <input type="email" id="username" name="username" placeholder="Enter your username" required />
+          </div>
+          <div class="input-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="Enter your password" required />
+          </div>
+          <div class="form-actions">
+            <label class="remember-label">
+                <input type="checkbox"/> Remember me
+            </label>
+            <a href="#">Forgot password?</a>
+        </div> 
+
+          <button type="submit" class="login-btn">Login</button>
+      </form>
   </div>
 </div>
 
