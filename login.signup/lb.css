@@ -268,8 +268,8 @@
     transform: translateY(-1px);
   }
   
-  .form-options {
-    display: flex;
+.form-options {
+  display: flex;
   justify-content: space-between;
   align-items: center;           /* Aligns checkbox properly */
   font-size: 0.9rem;
@@ -277,37 +277,37 @@
   color: #444;
   }
   
-  .form-options label {
+.form-options label {
     display: flex;
     align-items: center;
     gap: 6px;
     cursor: pointer;
   }
   
-  .form-options a {
+.form-options a {
     color: #b80000;
     text-decoration: none;
-  }
+}
   
-  .form-options a:hover {
+.form-options a:hover {
     text-decoration: underline;
-  }
+ }
   
-  .switch-form {
+.switch-form {
     text-align: center;
     font-size: 0.9rem;
     margin-top: 1rem;
-  }
+}
   
-  .switch-form a {
+.switch-form a {
     color: #b80000;
     text-decoration: none;
     font-weight: 500;
-  }
+}
   
-  .switch-form a:hover {
+.switch-form a:hover {
     text-decoration: underline;
-  }
+}
   
   .hidden {
     display: none;
